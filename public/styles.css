@@ -1,0 +1,240 @@
+/* 전체 레이아웃 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* 상황 리스트 스타일 */
+.incident-item {
+    border-left: 4px solid #6c757d;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.incident-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(2px);
+}
+
+.incident-item.selected {
+    background-color: #e3f2fd;
+    border-left-color: #2196f3;
+}
+
+.incident-item.priority-5 {
+    border-left-color: #dc3545;
+}
+
+.incident-item.priority-4 {
+    border-left-color: #fd7e14;
+}
+
+.incident-item.priority-3 {
+    border-left-color: #ffc107;
+}
+
+.incident-item.priority-2 {
+    border-left-color: #20c997;
+}
+
+.incident-item.priority-1 {
+    border-left-color: #6c757d;
+}
+
+/* 카테고리 배지 */
+.category-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.category-accident {
+    background-color: #dc3545;
+    color: white;
+}
+
+.category-incident {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.category-other {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* 신뢰도 표시 */
+.confidence-bar {
+    height: 4px;
+    background-color: #e9ecef;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.confidence-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.confidence-high {
+    background-color: #28a745;
+}
+
+.confidence-medium {
+    background-color: #ffc107;
+}
+
+.confidence-low {
+    background-color: #dc3545;
+}
+
+/* VMS 제어 패널 */
+#vmsMessage {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* 상태 표시 */
+.status-unread {
+    color: #dc3545;
+}
+
+.status-checking {
+    color: #ffc107;
+}
+
+.status-resolved {
+    color: #28a745;
+}
+
+/* 통계 차트 영역 */
+#statisticsChart {
+    min-height: 400px;
+    position: relative;
+}
+
+/* 애니메이션 */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.incident-item.new {
+    animation: slideIn 0.5s ease;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0.5rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-group-vertical .btn {
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* 로딩 스피너 */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 하이라이트 효과 */
+.highlight {
+    background-color: #fff3cd;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+}
+
+/* 카드 그림자 효과 */
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* 통계 카드 */
+.stat-card {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #495057;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 시간 표시 */
+.time-display {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* 우선순위 표시 */
+.priority-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.priority-5 .priority-indicator {
+    background-color: #dc3545;
+}
+
+.priority-4 .priority-indicator {
+    background-color: #fd7e14;
+}
+
+.priority-3 .priority-indicator {
+    background-color: #ffc107;
+}
+
+.priority-2 .priority-indicator {
+    background-color: #20c997;
+}
+
+.priority-1 .priority-indicator {
+    background-color: #6c757d;
+}
